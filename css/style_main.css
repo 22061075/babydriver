@@ -1,0 +1,937 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Gamja+Flower&display=swap');
+
+/* 초기화 코드 */
+body, h1, h2, h3, h4, h5, h6, ul, ol, dl, p, section, div {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Modern Normalize  : 표준화 시키는 것 (표준화가 되게 해주어서 브라우저를 잘 대응되게 지정한 것) */
+*,::after,::before{box-sizing:border-box}:root{-moz-tab-size:4;tab-size:4}html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}hr{height:0}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{padding:0}progress{vertical-align:baseline}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+/* Variable */
+html{--btn-size:70px}
+
+html{
+    --gn-height:60px;
+    --gf-height:100px;
+
+    width:100%;
+    height:100%;
+    color:var(--default-color);
+    font-family:'Noto Sans KR',sans-serif !important;
+    font-size:12px;
+    font-weight:400;
+    line-height:18px;
+    min-height:100vh;
+    color:#333;
+    line-height:1.5rem;
+}
+body{
+    overflow-x:hidden;
+    width:100%;
+    background-color:#fe557b;
+    text-align: center;
+}
+.blind{
+    display:none!important;
+    visibility:hidden!important;
+    opacity:0;
+    clip:rect(0 0 0 0);
+    pointer-events:none;
+    position:absolute;
+    margin:0;
+    padding:0;
+}
+
+#main section.section:nth-child(1){
+    height:100vh;
+    background-image:url("../img/1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #967157;
+}
+#main section.section:nth-child(2){
+    height:100vh;
+    background-image:url("../img/1_3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #967157;
+}
+
+#main section.section:nth-child(3){
+    height:100vh;
+    background-image:url("../img/1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#main section.section:nth-child(4){
+    height:100vh;
+    background-image:url("../img/1_2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#main section.section:nth-child(5){
+    height:calc(100vh - var(--gf-height));
+    background-image:url("../img/1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* header */
+header {
+    position: fixed;        /* header를 고정 시켜서 모든 페이지에서 볼 수 있게 함*/
+    top: 70px;
+    right: 30px;
+    z-index: 3;
+    font-size: 2rem;
+    text-align: right;
+    
+}
+header li{
+    list-style: none;
+    padding: 0px 30px;
+    color: #d1cab8;
+    font-weight: bold;
+    writing-mode: vertical-lr;
+    font-weight:700;
+    font-family: 'Dancing Script', cursive;
+}
+header ul li a{
+    text-decoration: none;
+    color: #ffffff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+
+}
+header ul li {
+    margin: 70px 0 0 0;
+}
+
+/* header의 글자 색이 바뀌는 인터랙션*/
+
+#list li a:hover {              /*  header의 글자에 마우스가 호버되면 글자의 색이 바뀜 */
+    color: #fe557a;
+}
+
+
+
+/* main 페이지 */
+
+#main{
+    width:100vw;
+}
+#main section.section{
+    width:100%;
+    color:#ffffff;
+}
+
+#main section.section .section-content{
+    width:100%;
+    max-width:1024px;
+    height:100%;
+    margin-right:auto;
+    margin-left:auto;
+    justify-content:center;
+    align-items:center;
+}
+#title{
+    padding-top: 220px;
+    color: #d8caba;
+    font-weight: bold;
+}
+#title h2{
+    font-size:3rem!important;
+    margin: 120px 0 0 500px;
+    text-shadow:0px 0px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* 창을 열었을 때 나타날 메인페이지에 애니메이션 1*/
+.tt{
+    position: absolute;
+    top: 150px;
+    right: 350px;
+    z-index: 1;
+
+    animation-name: move1;                  /* 애니메이션 이름지정*/
+    animation-duration:  1s;                /* 애니메이션이 실행 될 시간을 1초로 설정*/
+    animation-fill-mode: forwards;          /* 애니메이션이 끝난 후 그 지점에 그대로 있는다. */
+    animation-delay: 1s;                    /* 애니메이션이 실행되기 전 딜레이 될 시간을 1초로 설정 */
+    opacity: 0;                             /* 애니메이션이 실행되기 전 투명도를 0으로 하여 안보이게 함*/
+}
+@keyframes move1 {      /* move1의 애니메이션이 실행되게 함*/
+    0% {
+        top: 10%;       /* 맨처음 0% 일때는 top의 10%에 위치해 있다가*/
+    }
+    100% {
+        top: 18%;       /* 100%가 되면 top의 18%에 위치한다*/
+        opacity: 1;     /* 100%가 되면 투명도가 1이 되어 나타난다*/
+    }
+}
+.tt:hover{
+    width: 50%;         /* .tt에 마우스가 호버되면 width를 50%로 커지게 만든다*/
+    height: auto;
+}
+
+/* 창을 열었을 때 나타날 메인페이지에 애니메이션 2*/
+.tt2{
+    position: absolute;
+    top: 500px;
+    right: 150px;
+    z-index: 1;
+    
+    animation-name: move2;                      /* 애니메이션 이름지정*/
+    animation-duration:  1.5s;                  /* 애니메이션이 실행 될 시간을 1.5초로 설정*/
+    animation-iteration-count: infinite;        /* 애니메이션이 반복되는 시간을 계속 반복되도록 설정 */
+    animation-direction: alternate;             /* 애니메이션의 진행방향을 왔다 갔다 반복하도록 설정 */
+    
+}
+@keyframes move2 {      /* move2의 애니메이션이 실행되게 함*/
+    from {
+        margin-top:  0;         /* margin-top의 0인 위치에서 */
+    }
+    to {
+        margin-top:  70px;      /* margin-top의 70px인 위치로 움직인다*/
+    }
+}
+
+/* 창을 열었을 때 나타날 메인페이지에 애니메이션 3 */
+.tt3{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+
+    animation: move3;                  /* 애니메이션 이름지정*/
+    animation-duration:  1s;                /* 애니메이션이 실행 될 시간을 1초로 설정*/
+    animation-fill-mode: forwards;          /* 애니메이션이 끝난 후 그 지점에 그대로 있는다. */
+    animation-delay: 1s;                    /* 애니메이션이 실행되기 전 딜레이 될 시간을 1초로 설정 */
+    opacity: 0;                             /* 애니메이션이 실행되기 전 투명도를 0으로 하여 안보이게 함*/
+}
+@keyframes move3 {      /* move3의 애니메이션이 실행되게 함*/
+    0% {
+        left: -10%;       /* 맨처음 0% 일때는 left의 -10%에 위치해 있다가*/
+    }
+    100% {
+        left: 0%;           /* 100%가 되면 left의 0%에 위치한다*/
+        opacity: 1;     /* 100%가 되면 투명도가 1이 되어 나타난다*/
+    }
+}
+.tt3:hover{         /* .tt3에 마우스가 호버되면 width를 40%로 커지게 만든다*/
+    width: 40%;
+    height: auto;
+}
+
+/* 창을 열었을 때 나타날 메인페이지에 애니메이션 4*/
+.tt4{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+
+    animation: move4;                  /* 애니메이션 이름지정*/
+    animation-duration:  1s;                /* 애니메이션이 실행 될 시간을 1초로 설정*/
+    animation-fill-mode: forwards;          /* 애니메이션이 끝난 후 그 지점에 그대로 있는다. */
+    animation-delay: 1s;                    /* 애니메이션이 실행되기 전 딜레이 될 시간을 1초로 설정 */
+    opacity: 0;                             /* 애니메이션이 실행되기 전 투명도를 0으로 하여 안보이게 함*/
+}
+@keyframes move4 {      /* move4의 애니메이션이 실행되게 함*/
+    0% {
+        right: -10%;       /* 맨처음 0% 일때는 right의 -10%에 위치해 있다가*/
+    }
+    100% {
+        right: 0%;           /* 100%가 되면 right의 0%에 위치한다*/
+        opacity: 1;     /* 100%가 되면 투명도가 1이 되어 나타난다*/
+    }
+}
+
+
+
+
+
+h2{
+    margin:0;
+    padding:0;
+    font-size:4rem;
+    font-weight:700;
+    line-height:8rem;
+    font-family: 'Dancing Script', cursive;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+
+
+
+
+/* section2 */
+
+#flex{
+    display: flex;
+    justify-content: space-evenly;      /*아이템들 사이와 양 끝에 균일한 여백을 만들어 줌*/
+    
+    
+}
+#flex p{
+    margin: 100px 0 0 0px;
+    width: 500px;
+    font-size:25px;
+    line-height: 35px;
+    text-align: left;
+}
+
+#strong{
+    font-weight: bold;
+    font-size: 35px;
+    text-align: left !important;
+    color: #b8354f;
+    line-height: 35px;
+}
+#aa{
+    max-width:1600px !important;
+    margin-right:auto;
+    margin-left:auto;
+    align-items:center;
+    margin-top: 130px;
+}
+
+.contain {
+	position: relative;
+    top: -120px;
+	height: 800px;
+	width: 1100px;
+	overflow: hidden;
+	margin: 0;
+    writing-mode: vertical-lr;      /* .contain을 세로로 정렬 */
+}
+#section2img {
+	float: left;
+	margin: 20px;
+}
+#section2img:hover .thumb {                /* a에 마우스를 호버하면 사진들 옆에 그림자가 생성되게 한다. */
+	box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+}
+.thumb{
+    width: 200px;
+    height: 160px;
+}
+#containP {
+    font-size: 50px;
+    writing-mode:horizontal-tb;
+    line-height: 50px;
+    /* text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); */
+    text-align: center !important;
+    color: #865d40;
+    font-family: 'Gamja Flower', cursive !important;
+}
+#section2img1 {
+    border: 5px solid #865d40;
+    position: absolute;
+	left: 400px;
+    top: 20px;
+    width: 550px;
+    height: 750px;
+	opacity: 1 !important;      /* 기본으로 나와있게 설정하기 위함*/
+}
+
+
+/* section2의 마우스 호버하면 포스터 나오는 인터랙션*/
+.big {
+	position: absolute;
+	left: 400px;
+    top: 20px;
+    width: 550px;
+    height: 750px;
+    opacity: 0;
+    
+    /* #section2img에 마우스가 사라지면 .big이 사라질 때  애니메이션 */
+    transition:opacity 150ms 200ms cubic-bezier(0.455, 0.030, 0.515, 0.955);
+    /* 200ms만큼의 딜레이를 주고 150ms만큼의 애니메이션이 실행된다 */
+}
+
+#section2img:hover .big { /* #section2img에 마우스가 호버되면 원래 투명도 0이었던 .big이 투명도 1이 되어 나타남*/
+	left: 400px;
+    top: 20px;
+    opacity: 1;
+    
+    /* #section2img에 마우스가 호버 됐을 떄 .big이 나타나는 애니메이션 */
+    transition:opacity 150ms 200ms cubic-bezier(0.455, 0.030, 0.515, 0.955);
+    /* 200ms만큼의 딜레이를 주고 150ms만큼의 애니메이션이 실행된다 */
+}
+
+
+
+
+
+
+
+
+
+/* section3의 명장면 이미지 갤러리 (아코디언)*/
+
+.section-content2{
+    max-width:1600px !important;
+    width:100%;
+    height:100%;
+    margin-right:auto;
+    margin-left:auto;
+    justify-content:center;
+    align-items:center;
+}
+
+.accordion{
+    position:relative;
+    width:1600px;
+    height:800px;
+    /* margin: 0 200px; */
+    
+    margin-top: 100px;
+}
+
+.view{
+    overflow:hidden;    /* 안에 있는 것이 늘어나도 .accordion 의 영역 만큼만 사용하게 한다*/
+    display:flex;
+    position:relative;
+    width:100%;
+    height:100%;
+    /* opacity: 50%; */
+}
+.view .view-item{
+    overflow:hidden;
+    position:relative;
+    height:100%;
+    flex:1;         /* .view-item 을 동일한 비율로 사용가능 */
+    
+    /* 0.36초 동안 가속도가 있는 상태로 .view-item이 열리는 애니메이션이 나타난다.*/
+    transition:all 360ms cubic-bezier(0.455, 0.030, 0.515, 0.955);      /*easeIn값을 가져옴*/
+}
+
+.view .view-item.selected{     /* .view-item 영역에 클릭하면 사이즈가 커진다*/
+    flex-grow:0;
+    flex-shrink:0;
+    flex-basis:800px;
+}
+
+.view-item .menu-collapse{
+    position:absolute;
+    z-index:10;             /*뒤에 배경 그림보다 위로 오게함*/
+    top:30%;
+    left:50%;
+    opacity:1;              /* 처음에는 투명도 1로 해서 보이게 함*/
+    pointer-events:auto;            /* 처음에는 영역이 선택되도록 한다.*/
+    transform-origin:center center;     /* 회전할 때 앵커 보인트를 가운데오 오게 한다*/
+    transform:translateX(-50%) translateY(-50%) rotate(-45deg);     /* (움직임 조절) .menu-collapse의 위치를 가운데로 맞춰주고, 제목에 회전값을 준다.*/
+    
+    /* .view-item에 마우스가 호버가 사라져 .menu-collapse가 나타날 때 애니메이션 */
+    transition:opacity 160ms 200ms cubic-bezier(0.455, 0.030, 0.515, 0.955);
+    /* 전체의 애니메이션이 360이니까 200만큼의 딜레이를 주고 160만큼의 애니메이션을 준다.*/
+}
+
+.view .view-item.selected .menu-collapse{
+    opacity:0;                          /* .view-item 을 클릭하면 .menu-collapse 의 투명도가 0이되어 사라짐*/
+    pointer-events:none;                 /* 영역이 선택되지 않도록 한다*/
+
+    /* .view-item을 클릭하여 .menu-collapse가 사라질 때 애니메이션 */
+    transition:opacity 160ms cubic-bezier(0.455, 0.030, 0.515, 0.955);
+    /* 160만큼의 속도로 바로 나타나도록 한다. */
+}
+
+.view-item .menu-collapse span{
+    writing-mode:horizontal-tb !important;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    display:block;
+    text-transform:uppercase;       /* 대문자 설정*/
+    white-space:nowrap;             /* 줄 바꿈이 되지 않고 길게 쓰인다 */
+    font-size:1.5rem;
+    font-weight:700;
+}
+
+.view-item .menu-view{
+    display:flex;
+    position:relative;
+    z-index:10;         /*뒤에 배경 그림보다 위로 오게함*/
+    width:100%;
+    height:100%;
+    opacity:0;                  /* 영역은 그래도 있지만 처음에 보이지만 않도록 투명 처리를 한다. */
+    pointer-events:none;        /* 영역이 선택되지 않도록 한다. */
+    flex-direction:column;      /* .menu-view 안에 있는 글자들을 위 아래로 떨어져서 배치되게 한다.*/
+    justify-content:center;     /* 세로 가운데 정렬*/
+    align-items:center;         /*가로 가운데 정렬*/
+
+    /* 다름.view-item가 클릭되어 .menu-view가 없어지는 애니메이션*/
+    transition:opacity 200ms cubic-bezier(0.455, 0.030, 0.515, 0.955);
+     /* 200만큼의 속도로 바로 사라지도록 한다. */
+}
+
+.view .view-item.selected .menu-view{
+    opacity:1;                      /*.view-item가 클릭되면 투명도 0이었던 .menu-view 가 투명도 1이 되어 나타남*/
+    pointer-events:auto;            /* none 해두었던 pointer-events 도 다시 작동됨*/ 
+
+    /* .view-item에 마우스가 클릭되어 .menu-view가 나타날 때 애니메이션*/
+    transition:opacity 200ms 160ms cubic-bezier(0.455, 0.030, 0.515, 0.955);
+    /* 전체의 애니메이션이 360이니까 160만큼의 딜레이를 주고 200만큼의 애니메이션을 준다.*/
+}
+
+.view .view-item .image-wrap{
+    opacity:50% !important;
+    pointer-events:auto;
+
+    /* .view-item이 클릭이 해제되면 .image-wrap의 투명도가 연해지는 애니메이션*/
+    transition:opacity 200ms 160ms cubic-bezier(0.455, 0.030, 0.515, 0.955);         
+    /* 160만큼의 딜레이를 주고 200만큼의 애니메이션이 진행된다.*/
+    
+}
+.view .view-item.selected .image-wrap{
+    opacity:100% !important;
+    pointer-events:auto;
+
+    /* .view-item이 클릭되면 .image-wrap의 투명도가 진해지는 애니메이션*/
+    transition:opacity 300ms 60ms cubic-bezier(0.455, 0.030, 0.515, 0.955);  
+    /* 60만큼의 딜레이를 주고 300만큼의 애니메이션이 진행된다. */
+    
+}
+
+.view-item .menu-view span.title{
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+    color: #d8caba;
+    text-transform:uppercase;
+    font-size:1.667rem;
+    font-weight:700;
+    line-height:2.167rem;
+    transform:translateY(370px);        /* 처음에는 370px에 위치하게 한다*/
+    transition:transform 200ms cubic-bezier(0.455, 0.030, 0.515, 0.955);
+    /* 200만큼의 속도로 바로 사라지도록 한다. */
+}
+
+.view .view-item.selected .menu-view span.title{
+    transform:translateY(340px);        /* .view-item가 클릭되면 280px에 위치하던 것을 340px로 위치하게 하는 애니메이션을 준다*/
+    transition:transform 200ms 160ms cubic-bezier(0.455, 0.030, 0.515, 0.955);
+    /* 160만큼의 딜레이를 주고 200만큼의 애니메이션으로 올라온다*/
+}
+
+.view-item .menu-view span.desc{
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    font-size:1.5rem;
+    line-height:1.667rem;
+    transform:translateY(430px);         /* 처음에는 430px에 위치하게 한다*/
+    transition:transform 200ms cubic-bezier(0.455, 0.030, 0.515, 0.955);
+    /* 200만큼의 속도로 바로 사라지도록 한다. */
+}
+
+.view .view-item.selected .menu-view span.desc{
+    transform:translateY(350px);        /* .view-item가 클릭되면 330px에 위치하던 것을 350px로 위치하게 하는 애니메이션을 준다*/
+    transition:transform 200ms 160ms cubic-bezier(0.455, 0.030, 0.515, 0.955);
+    /* 160만큼의 딜레이를 주고 200만큼의 애니메이션으로 올라온다*/
+}
+
+.view-item .menu-view span.title + span.desc{       /*.view-item .menu-view span.title 와 span.desc의 사이 간격을 절어지게 함*/
+    margin-top:15px;
+}
+.view-item .menu-view::after {          /**/
+    padding-top:300px;
+    content:"";
+    background-color:transparent;
+    display:block; 
+}
+
+.view-item .image-wrap{    
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+.view-item .image-wrap img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;           /* 이미지 폭에 맞게 자동으로 적용이 된다*/
+    padding: 0 10px 0 10px;
+}
+
+
+#image-wrap1 {              /* 아코디언 이미지 각각의 height 값과 margin-top 높이를 맞춰줌*/
+    height:300px;
+    margin-top: 100px;
+}
+#image-wrap2 {              /* 아코디언 이미지 각각의 height 값과 margin-top 높이를 맞춰줌*/
+    height:400px;
+    margin-top: 50px;
+}
+#image-wrap3 {              /* 아코디언 이미지 각각의 height 값과 margin-top 높이를 맞춰줌*/
+    height:500px;
+    margin-top: 20px;
+}
+#image-wrap4 {              /* 아코디언 이미지 각각의 height 값과 margin-top 높이를 맞춰줌*/
+    height:380px;
+    margin-top: 100px;
+}
+#image-wrap5 {              /* 아코디언 이미지 각각의 height 값과 margin-top 높이를 맞춰줌*/
+    height:300px;
+    margin-top: 130px;
+}
+
+
+
+
+
+
+
+ /* section4의 오디오*/
+
+.flex{
+    display: flex;
+    width: 1500px;
+    justify-content: space-between;     /*각각 (오른쪽, 왼쪽) 양쪽 끝으로 붙이고 나머지는 동일한 간격으로 정렬한다.*/
+    margin: 0 auto;
+}
+#audioBG{
+    z-index: 20;
+top: 200px;
+left:300px;
+position: relative;
+background-repeat: no-repeat;
+height: 420px;
+width: 400px; 
+background-size: cover;
+}
+.audio {
+top: 150px;
+left: 15px;
+position: relative;
+width: 400px;
+margin: 40px auto;
+background-color: transparent;
+opacity: 1;
+
+}
+#audio2{
+    text-align: right !important;
+}
+#audio1{
+text-align: left !important;
+}
+img {
+display: block;
+}
+
+#article {
+max-height: 190px;
+overflow: hidden;
+}
+
+.left {
+float: left;
+
+}
+
+.right {
+float: right !important;
+}
+
+#h3 {
+margin-top: 80px;
+font-size: 80px !important;
+color: #8a6a53;
+line-height: 85px;
+font-family: 'Cinzel', serif !important;
+text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+}
+#h3_2 {
+margin-top: 80px;
+font-size: 80px !important;
+color: #865d40;
+line-height: 85px;
+font-family: 'Cinzel', serif !important;
+text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+}
+#h3_3 {
+margin-top: 80px;
+font-size: 80px !important;
+color: #7b5133;
+line-height: 85px;
+font-family: 'Cinzel', serif !important;
+text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+}
+small{
+color: #a6856f;
+font-size: 40px !important;
+}
+
+#h4 {
+    margin: 5px 0; 
+    color: rgba(149, 165, 166,1.0);
+}
+
+/* 플레이 버튼과 멈춤 버튼*/
+#play img{
+height: 50px;
+width: 50px;
+border: 0;
+
+}
+
+#pause img{
+height: 50px;
+width: 50px;
+border: 0;
+
+}
+#play2 img{
+height: 50px;
+width: 50px;
+border: 0;
+}
+
+#pause2 img{
+height: 50px;
+width: 50px;
+border: 0;
+
+}
+#play3 img {
+height: 50px;
+width: 50px;
+border: 0;
+
+}
+
+#pause3 img{
+height: 50px;
+width: 50px;
+border: 0;
+}
+button{
+    margin-top: 100px;
+    height: 60px !important;
+    width: 60px !important;
+    background-color: transparent;
+    border: 2px solid transparent !important;
+}
+  
+
+
+
+
+  
+  /* section5 */
+
+  .column {
+	margin: 70px 0 0 0;
+	padding: 0 0 0 50px;
+    max-width:1700px !important;
+    margin-right:auto;
+    margin-left:auto;
+    justify-content:center;
+    align-items:center;
+}
+.column:last-child {
+	padding-bottom: 60px;
+}
+.column::after {
+	content: '';
+	clear: both;
+	display: block;
+}
+.column div {
+	position: relative;
+	float: left;
+	width: 300px;
+	height: 300px;
+	margin: 0 0 0 25px;
+	padding: 0;
+}
+.column div img{
+	width: 100%;
+    height: 100%;
+}
+
+.column div:first-child {
+	margin-left: 0;
+}
+
+figure {
+	width: 300px;
+	height: 300px;
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	overflow: hidden;
+}
+strong{
+    font-size: 30px;
+}
+#m1 p, #m2 p, #m3 p, #m4 p, #m5 p{
+    font-size: 20px !important;
+    line-height: 25px;
+    color: #ffffff;
+}
+
+/*section5의 이미지에 대한 설명이 나타나는 인터랙션*/
+
+.column div span {
+
+	position: absolute;
+	bottom: -150px;
+	left: 0;
+	z-index: 20;
+	display: block;
+	width: 300px;
+	margin: 0;
+	padding: 0;
+	color: #444;
+	font-size: 18px;
+	text-decoration: none;
+	text-align: center;
+	transition: .3s ease-in-out;
+	opacity: 0;
+
+    /* 이미지에 호버된 마우스가 떠나면 span(설명)이 사라지는 애니메이션*/
+    transition:opacity 140ms 190ms cubic-bezier(0.455, 0.030, 0.515, 0.955);
+    /*190만큼의 딜레이가 되어 140만큼의 애니메이션이 가속도가 있는 상태로 진행된다.*/
+}
+figure:hover+span {
+	bottom: -150px;
+	opacity: 1;
+
+    /* 이미지에 마우스가 호버되면 span(설명)이 나타나는 애니메이션*/
+    transition:opacity 140ms 190ms cubic-bezier(0.455, 0.030, 0.515, 0.955);
+    /*190만큼의 딜레이가 되어 140만큼의 애니메이션이 가속도가 있는 상태로 진행된다.*/
+}
+
+
+
+
+/* section5의 이미지가 움직이는 애니메이션 */
+#m1 {
+      padding-top: 20px;
+
+      animation-name: move7;                      /* 애니메이션 이름지정*/
+      animation-duration:  1.5s;                  /* 애니메이션이 실행 될 시간을 1.5초로 설정*/
+      animation-iteration-count: infinite;        /* 애니메이션이 반복되는 시간을 계속 반복되도록 설정 */ 
+      animation-direction: alternate;             /* 애니메이션의 진행방향을 왔다 갔다 반복하도록 설정 */ 
+      /* position: relative; */
+      
+  }
+  @keyframes move7 {      /* move7의 애니메이션이 실행되게 함*/
+      from {
+          margin-top:  0;         /* margin-top의 0인 위치에서 */
+      }
+      to {
+          margin-top:  150px;      /* margin-top의 150px인 위치로 움직인다*/
+      }
+  }
+#m2 {
+    padding-top: 20px;
+
+    animation-name: move8;                      /* 애니메이션 이름지정*/
+    animation-duration:  1s;                  /* 애니메이션이 실행 될 시간을 1초로 설정*/
+    animation-iteration-count: infinite;        /* 애니메이션이 반복되는 시간을 계속 반복되도록 설정 */ 
+    animation-direction: alternate;              /* 애니메이션의 진행방향을 왔다 갔다 반복하도록 설정 */
+    /* position: relative; */
+    
+}
+@keyframes move8 {      /* move8의 애니메이션이 실행되게 함*/
+    from {
+        margin-top:  130px;         /* margin-top의 130px인 위치에서 */
+    }
+    to {
+        margin-top:  80px;      /* margin-top의 80px인 위치로 움직인다*/
+    }
+}
+#m3 {
+    padding-top: 20px;
+
+    animation-name: move9;                      /* 애니메이션 이름지정*/
+    animation-duration:  2s;                  /* 애니메이션이 실행 될 시간을 2초로 설정*/
+    animation-iteration-count: infinite;        /* 애니메이션이 반복되는 시간을 계속 반복되도록 설정 */ 
+    animation-direction: alternate;             /* 애니메이션의 진행방향을 왔다 갔다 반복하도록 설정 */ 
+    /* position: relative; */
+    
+}
+@keyframes move9 {      /* move9의 애니메이션이 실행되게 함*/
+    from {
+        margin-top:  150px;         /* margin-top의 150px인 위치에서 */
+    }
+    to {
+        margin-top:  70px;      /* margin-top의 70px인 위치로 움직인다*/
+    }
+}
+#m4 {
+    padding-top: 20px;
+
+    animation-name: move10;                      /* 애니메이션 이름지정*/
+    animation-duration:  1.1s;                  /* 애니메이션이 실행 될 시간을 1.1 초로 설정*/
+    animation-iteration-count: infinite;        /* 애니메이션이 반복되는 시간을 계속 반복되도록 설정 */ 
+    animation-direction: alternate;             /* 애니메이션의 진행방향을 왔다 갔다 반복하도록 설정 */ 
+    /* position: relative; */
+    
+}
+@keyframes move10 {      /* move10의 애니메이션이 실행되게 함*/
+    from {
+        margin-top:  180px;         /* margin-top의 180px인 위치에서 */
+    }
+    to {
+        margin-top:  40px;      /* margin-top의 40px인 위치로 움직인다*/
+    }
+}
+
+#m5 {
+    padding-top: 20px;
+
+    animation-name: move11;                      /* 애니메이션 이름지정*/
+    animation-duration:  1.7s;                  /* 애니메이션이 실행 될 시간을 1.7초로 설정*/
+    animation-iteration-count: infinite;        /* 애니메이션이 반복되는 시간을 계속 반복되도록 설정 */ 
+    animation-direction: alternate;             /* 애니메이션의 진행방향을 왔다 갔다 반복하도록 설정 */ 
+    /* position: relative; */
+    
+}
+@keyframes move11 {      /* move11의 애니메이션이 실행되게 함*/
+    from {
+        margin-top:  190px;         /* margin-top의 190px인 위치에서 */
+    }
+    to {
+        margin-top:  70px;      /* margin-top의 70px인 위치로 움직인다*/
+    }
+}
+
+
+
+
+
+
+
+/* footer */
+
+footer {
+    font-family:'Noto Sans KR',sans-serif !important;
+}
+footer#global-footer{
+    width:100vw;
+    height:var(--gf-height);
+    background-color:#fe557b;
+    color:#ffffff;
+}
+footer#global-footer .gf-content{
+    display:flex;
+    width:100%;
+    max-width:1024px;
+    height:100%;
+    margin-right:auto;
+    margin-left:auto;
+    justify-content:center;
+    align-items:center;
+}
+footer#global-footer .gf-content h2{
+    margin:0 100px 0 0;
+    padding:0;
+    font-size:1rem; 
+    font-weight:400;
+    line-height:1.25rem; 
+    font-family:'Noto Sans KR',sans-serif !important;
+}
+

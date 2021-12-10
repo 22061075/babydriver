@@ -1,0 +1,96 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+body, h1, h2, h3, h4, h5, h6, ul, ol, dl, p, section, div {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Modern Normalize  : 표준화 시키는 것 (표준화가 되게 해주어서 브라우저를 잘 대응되게 지정한 것) */
+*,::after,::before{box-sizing:border-box}:root{-moz-tab-size:4;tab-size:4}html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji'}hr{height:0}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{padding:0}progress{vertical-align:baseline}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}
+
+/* Variable */
+html{
+    width:100%;
+    height:100%;
+    font-weight:700;
+    line-height:8rem;
+    font-family: 'Dancing Script', cursive;
+    line-height:1.5rem;
+
+}
+body{
+    font-family: 'Dancing Script', cursive;
+
+    text-align: center;
+}
+
+
+#main{
+    width:100vw;
+}
+#main section.section{
+    width:100%;
+    color:#ffffff;
+}
+#main section.section:nth-child(1){
+    height:100vh;
+    background-image:url("../img/1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h2{
+    font-size: 40px;
+    font-weight: 400;
+    font-family:'Noto Sans KR',sans-serif;
+}
+
+
+img{
+    width:300px;
+    height: auto;
+    padding-top: 100px;
+}
+
+
+/*  인덱스의 창을 열었을 때 나타날 메인페이지에 애니메이션 1*/
+#section1 h1{
+    padding-top: 400px;
+    font-size: 150px;
+    z-index: 0;
+
+    animation: move1;                       /* 애니메이션 이름지정*/
+    animation-duration: 3s;                /* 애니메이션이 실행 될 시간을 3초로 설정*/
+    animation-delay: 1s;                    /* 애니메이션이 실행되기 전 딜레이 될 시간을 1초로 설정 */
+    opacity: 0;                             /* 애니메이션이 실행되기 전 투명도를 0으로 하여 안보이게 함*/
+}
+@keyframes move1 {      /* move1의 애니메이션이 실행되게 함*/
+    50% {
+        opacity: 1;         /* 맨처음 투명도 0에서 50% 때는 투명도를 1로 해서 나타났다가 */
+    }
+    100% {
+        opacity: 0;     /* 100%가 되면 투명도가 0이 되어 사라진다*/
+    }
+}
+
+
+/*  인덱스의 창을 열었을 때 나타날 메인페이지에 애니메이션 2*/
+#delay{
+    margin-top:  -100px;
+    z-index: 0;
+
+    animation: move2;                       /* 애니메이션 이름지정*/
+    animation-duration:  3s;                /* 애니메이션이 실행 될 시간을 3초로 설정*/
+    animation-fill-mode: forwards;          /* 애니메이션이 끝난 후 그 지점에 그대로 있는다. */
+    animation-delay: 4s;                    /* 애니메이션이 실행되기 전 딜레이 될 시간을 4초로 설정하여 move1의 애니메이션이 실행될 후 나오게 함 */
+    opacity: 0;                             /* 애니메이션이 실행되기 전 투명도를 0으로 하여 안보이게 함*/
+}
+@keyframes move2 {      /* move1의 애니메이션이 실행되게 함*/
+    100% {
+        opacity: 1;     /* 맨처음 투명도가 0이었다가 100%가 되면 투명도가 1이 되어 나타난다*/
+    }
+}
+
+
